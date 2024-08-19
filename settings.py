@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -80,7 +84,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'tms_db',  # Имя базы данных
         'USER': 'postgres',  # Имя пользователя
-        'PASSWORD': 'serega94',  # Пароль пользователя
+        'PASSWORD': os.environ.get('DB_PASSWORD'),  # Пароль пользователя
         'HOST': 'localhost',  # Адрес сервера базы данных
         'PORT': '5432',  # Порт сервера базы данных
     }
