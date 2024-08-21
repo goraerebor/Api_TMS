@@ -22,4 +22,5 @@ urlpatterns = [
     path('api/routes', views.create_route, name='create_route'),
     path('api/routes/<int:pk>', views.get_route, name='get_route'),
     path('api/routes/all', views.get_all_routes, name='get_all_routes'),
+    path('api/routes/all/new', views.get_all_routes, name='get_all_routes'),
 ]
